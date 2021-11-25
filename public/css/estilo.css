@@ -170,3 +170,8 @@ body {
     margin-top: 7rem;
   }
 }
+
+.carousel-caption h1 {
+  color: #fff;
+  text-shadow: 0 3px 0 black;
+}

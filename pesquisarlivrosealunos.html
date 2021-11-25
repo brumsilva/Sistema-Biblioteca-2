@@ -1,0 +1,114 @@
+<section class="container">
+        <!-- NOVO MODAL -->
+        <div class="modal" tabindex="-1" id="mostra">
+            <div class="modal-dialog" style="background-color: rgb(209, 210, 211);">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Login</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body" style="background-color: rgb(164, 165, 167);">
+                    <form action="">
+                        <label for="login_nome">Usuário</label>
+                        <input type="text" id="login_nome" name="login_nome" class="form-control">
+
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" id="senha" class="form-control">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-primary" data-dismiss="modal" id="logar">Logar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="container">
+          <div class="row">
+              <div class="col">
+                  <div class="row">
+                      <div class="col d-flex flex-wrap align-items-center">
+                        <div class="col">
+                            <h1>Lista de Livros</h1>
+                        </div>
+                        <div class="col d-flex justify-content-end">
+                            <form class="form-inline my-2 my-lg-0">
+                                <input class="form-control mr-sm-2  ml-5" type="search" placeholder="Pesquisar livro" aria-label="Search">
+                                <a href="/pesquisarLivros" class="btn btn-outline-primary">Pesquisar livros</a>
+                              </form>
+                        </div>
+                      </div>
+                  </div>
+                  <table class="table table-hover">
+                      <thead>
+                          <tr>
+                              <th>Título</th>
+                              <th>Autor</th>
+                              <th>Ano de Publicação</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <% if(livro_nome == 0){ %>
+                              <tr>
+                                  <td colspan="6" class="alert alert-danger text-center">Nenhum livro encontrado</td>
+                              </tr>
+                          <%}else{
+                              livro_item.forEach(function(livro){ %>
+                              <tr>
+                                  <td> <%= livro.titulo %> </td>
+                                  <td> <%= livro.nomeAutor %> </td>
+                                  <td> <%= livro.anoPublicacao %> </td>
+                              </tr>
+                          <% })} %>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="container">
+          <div class="row">
+              <div class="col">
+                  <div class="row">
+                      <div class="col d-flex flex-wrap align-items-center">
+                        <div class="col">
+                            <h1>Lista de Alunos</h1>
+                        </div>
+                        <div class="col d-flex justify-content-end">
+                            <form class="form-inline my-2 my-lg-0">
+                                <input class="form-control mr-sm-2  ml-5" type="search" placeholder="Pesquisar livro" aria-label="Search">
+                                <a href="/pesquisarLivros" class="btn btn-outline-primary">Pesquisar livros</a>
+                              </form>
+                        </div>
+                      </div>
+                  </div>
+                  <table class="table table-hover">
+                      <thead>
+                          <tr>
+                              <th>Nome do Aluno</th>
+                              <th>Matrícula</th>
+                              <th>Curso</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <% if(livro_nome == 0){ %>
+                              <tr>
+                                  <td colspan="6" class="alert alert-danger text-center">Nenhum livro encontrado</td>
+                              </tr>
+                          <%}else{
+                              livro_item.forEach(function(livro){ %>
+                              <tr>
+                                  <td> <%= livro.nomeAluno %> </td>
+                                  <td> <%= livro.matrícula %> </td>
+                                  <td> <%= livro.curso %> </td>
+                              </tr>
+                          <% })} %>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+        </div>
+    </section>
